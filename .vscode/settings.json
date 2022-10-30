@@ -1,0 +1,18 @@
+{
+        "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.esbuild":true,
+        "**/lib":true,
+        "**/node_modules":true,
+        "**/.nvmrc":true,
+        "**/package-lock.json":true,
+        "**/*.js":true,
+        "**/coverage":true,
+        "**/.serverless":true
+    }
+}

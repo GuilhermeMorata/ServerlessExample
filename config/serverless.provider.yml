@@ -1,0 +1,17 @@
+name: 'aws'
+runtime: 'nodejs14.x'
+region: us-east-1
+apiGateway: 
+  minimumCompressionSize: 1024
+  shouldStartNameWithService: true
+environment:  ${file(./serverless.env.yml)}
+iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "*"

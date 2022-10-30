@@ -1,0 +1,38 @@
+authorizerFunc:
+    handler: "./src/handler.handlerAuthorizeUser"
+
+login:
+  handler: "./src/handler.login"
+  events:
+    - http:
+        path: login
+        method: post
+        corst: true 
+
+getDataUser:
+  handler:  "./src/handler.getDataUser"
+  events:
+    - http:
+        path: getDataUser
+        method: get
+        authorizer: authorizerFunc
+        cors:
+          origins:
+            - '*'
+          headers:
+            - Content-Type
+            - Authorization
+    
+s3Func:
+  handler:  "./src/handler.handlerS3Func"
+  events:
+    - http:
+        path: s3Func
+        method: post
+        authorizer: authorizerFunc
+        cors:
+          origins:
+            - '*'
+          headers:
+            - Content-Type
+            - Authorization

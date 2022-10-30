@@ -1,0 +1,25 @@
+  service: 'serverless-example'
+
+  frameworkVersion: '3'
+
+  useDotenv: true
+  
+  provider: 
+    ${file(./config/serverless.provider.yml)}
+    
+  functions: 
+    ${file(./config/serverless.functions.yml)}
+
+  resources:
+    ${file(./config/serverless.resources.yml)}
+
+  package: 
+    individually: true 
+    excludeDevDependencies: true
+  
+  custom: 
+    ${file(./config/serverless.custom.yml)}
+  
+  plugins: 
+    - "serverless-esbuild" 
+    - "serverless-offline"
